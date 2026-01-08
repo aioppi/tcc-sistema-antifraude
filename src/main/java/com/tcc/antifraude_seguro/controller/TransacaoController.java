@@ -1,5 +1,6 @@
 package com.tcc.antifraude_seguro.controller;
 
+import jakarta.validation.Valid;
 import com.tcc.antifraude_seguro.model.Transacao;
 import com.tcc.antifraude_seguro.repository.TransacaoRepository;
 import com.tcc.antifraude_seguro.service.AnalisadorRiscoService;
@@ -30,15 +31,14 @@ public class TransacaoController {
     }
 
     @PostMapping
-    public Transacao criar(@RequestBody Transacao transacao) {
+    public Transacao criar(@Valid @RequestBody Transacao transacao) {
         // Define data/hora atual
         transacao.setDataHora(LocalDateTime.now());
 
-        // ========== AQUI É A MÁGICA! ==========
-        analisador.analisar(transacao);  // ← Sistema PENSA!
-        // ======================================
+        // Analisa fraude
+        analisador.analisar(transacao);
 
-        // Salva no banco com status e score já definidos
+        // Salva no banco e retorna
         return repository.save(transacao);
     }
 
