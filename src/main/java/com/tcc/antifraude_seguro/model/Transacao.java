@@ -1,6 +1,7 @@
 package com.tcc.antifraude_seguro.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,11 +12,28 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Usuário ID é obrigatório")
+    @Size(min = 3, max = 50, message = "Usuário ID deve ter entre 3 e 50 caracteres")
     private String usuarioId;
+
+    @NotNull(message = "Valor é obrigatório")
+    @Positive(message = "Valor deve ser positivo")
+    @Max(value = 1000000, message = "Valor não pode exceder R$ 1.000.000")
     private Double valor;
+
+    @NotBlank(message = "Tipo é obrigatório")
+    @Pattern(
+            regexp = "PIX|TED|DOC|BOLETO|CARTAO",
+            message = "Tipo deve ser: PIX, TED, DOC, BOLETO ou CARTAO"
+    )
     private String tipo;
+
     private LocalDateTime dataHora;
+
     private String status;
+
+    @Min(value = 0, message = "Score de risco não pode ser negativo")
+    @Max(value = 100, message = "Score de risco não pode exceder 100")
     private Double scoreRisco;
 
     // Construtor vazio (obrigatório pro JPA)
