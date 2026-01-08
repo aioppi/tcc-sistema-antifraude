@@ -1,0 +1,29 @@
+# Compilados
+target/
+*.class
+*.jar
+*.war
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dados sensíveis
+application-*.properties
+*.env
+
+# H2 Database files (em memória, não precisa versionar)
+*.db
+*.mv.db
+*.trace.db
