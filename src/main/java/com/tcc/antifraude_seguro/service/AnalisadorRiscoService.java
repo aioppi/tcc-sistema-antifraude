@@ -18,11 +18,11 @@ public class AnalisadorRiscoService {
 
         // Define status baseado no score
         if (score >= 70) {
-            transacao.setStatus("BLOQUEADO");
+            transacao.setStatus("BLOQUEADA");  // ← CORRIGIDO!
         } else if (score >= 40) {
             transacao.setStatus("REVISAO");
         } else {
-            transacao.setStatus("APROVADO");
+            transacao.setStatus("APROVADA");   // ← CORRIGIDO!
         }
     }
 
@@ -57,17 +57,17 @@ public class AnalisadorRiscoService {
         }
 
         if (valor > 15000) {
-            return 50;  // AUMENTADO! Valor extremo
+            return 50;  // Valor extremo
         } else if (valor > 10000) {
-            return 45;  // AUMENTADO!
+            return 45;
         } else if (valor > 5000) {
-            return 40;  // AUMENTADO!
+            return 40;
         } else if (valor > 2000) {
-            return 30;  // AUMENTADO!
-        } else if (valor > 1000) {
-            return 20;  // AUMENTADO!
-        } else if (valor > 500) {
-            return 10;  // AUMENTADO!
+            return 30;
+        } else if (valor >= 1000) {  // ← CORRIGIDO: >= em vez de >
+            return 20;
+        } else if (valor >= 500) {   // ← CORRIGIDO: >= em vez de >
+            return 10;
         }
 
         return 0;  // Valor baixo = seguro
@@ -83,7 +83,7 @@ public class AnalisadorRiscoService {
 
         int h = hora.getHour();
 
-        // Madrugada (00h-05h)
+        // Madrugada (00h-06h)
         if (h >= 0 && h < 6) {
             return 30;
         }
