@@ -356,9 +356,9 @@ curl -X POST http://localhost:8080/api/transacoes \
 **Alexandre Giacomoni Ioppi**
 - 📚 Engenharia de Software - UNINTER
 - 🎓 Graduação: Setembro 2026
-- 🌍 Waterlooville, Inglaterra
-- 📧 [Seu email]
-- 💼 [LinkedIn](https://linkedin.com/in/seu-perfil)
+- 🌍 Liverpool, Inglaterra
+- 📧 ioppiengineer@gmail.com
+- 💼 [LinkedIn](https://linkedin.com/in/ioppialexandre)
 - 🐙 [@aioppi](https://github.com/aioppi)
 
 ## 📄 Licença
