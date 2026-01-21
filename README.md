@@ -340,17 +340,6 @@ curl -X POST http://localhost:8080/api/transacoes \
 ```
 **Resultado:** HTTP 400 com lista de erros
 
-## 📈 Roadmap
-
-- [x] **Dia 1:** API REST + Banco de Dados H2
-- [x] **Dia 2:** Lógica de Detecção de Fraude (4 regras)
-- [x] **Dia 3:** Validação + Tratamento de Erros
-- [ ] **Dia 4:** Docker + Documentação Final
-- [ ] **Dia 5:** Testes Automatizados (JUnit)
-- [ ] **Semana 2:** Análise de Segurança (OWASP Top 10)
-- [ ] **Semana 3:** Machine Learning Avançado (Python)
-- [ ] **Semana 4:** Documento Final TCC + Apresentação
-
 ## 👨‍💻 Autor
 
 **Alexandre Giacomoni Ioppi**
