@@ -6,11 +6,11 @@
 
 Sistema inteligente de detecção de fraudes em transações financeiras desenvolvido como Trabalho de Conclusão de Curso (TCC) - Engenharia de Software UNINTER.
 
-## 📋 Sobre o Projeto
+Sobre o Projeto
 
 Sistema anti-fraude que analisa transações financeiras em **tempo real**, calculando **score de risco (0-100%)** e tomando **decisões automáticas** de aprovação, revisão ou bloqueio.
 
-### 🎯 Objetivos
+Objetivos
 
 - ✅ Detectar transações fraudulentas automaticamente
 - ✅ Reduzir falsos positivos através de análise multicritério
@@ -18,25 +18,25 @@ Sistema anti-fraude que analisa transações financeiras em **tempo real**, calc
 - ✅ Fornecer score de risco explicável e auditável
 - ✅ Proteger contra valores negativos e dados inválidos
 
-## 🚀 Tecnologias
+Tecnologias
 
-### Backend
+Backend
 - **Java 17** - Linguagem principal
 - **Spring Boot 3.2.0** - Framework web
 - **Spring Data JPA** - Persistência de dados
 - **Hibernate** - ORM (Object-Relational Mapping)
 - **Bean Validation** - Validação de dados
 
-### Banco de Dados
+Banco de Dados
 - **H2 Database** (desenvolvimento) - Banco em memória
 - **PostgreSQL** (produção) - Banco relacional
 
-### Ferramentas
+Ferramentas
 - **Maven** - Gerenciamento de dependências
 - **Git** - Versionamento
 - **Docker** (futuro) - Containerização
 
-## 🏗️ Arquitetura
+Arquitetura
 ```
 ┌─────────────────────────────────────────────────┐
 │                   CLIENTE                       │
@@ -76,9 +76,9 @@ Sistema anti-fraude que analisa transações financeiras em **tempo real**, calc
 └─────────────────────────────────────────────────┘
 ```
 
-## 🔌 Endpoints da API
+Endpoints da API
 
-### 1. Status do Sistema
+1. Status do Sistema
 ```bash
 GET /api/transacoes/status
 ```
@@ -89,7 +89,7 @@ Sistema Anti-Fraude Operacional - TCC 2025
 
 ---
 
-### 2. Criar Transação (com análise automática)
+2. Criar Transação (com análise automática)
 ```bash
 POST /api/transacoes
 Content-Type: application/json
@@ -128,14 +128,14 @@ Content-Type: application/json
 
 ---
 
-### 3. Listar Todas as Transações
+3. Listar Todas as Transações
 ```bash
 GET /api/transacoes
 ```
 
 ---
 
-### 4. Estatísticas
+4. Estatísticas
 ```bash
 GET /api/transacoes/estatisticas
 ```
@@ -171,7 +171,7 @@ GET /api/transacoes/{id}/explicacao
 }
 ```
 
-## 📊 Regras de Detecção
+Regras de Detecção
 
 ### Score de Risco (0-100%)
 
@@ -221,7 +221,7 @@ Score 40-69%  → ⚠️  REVISÃO     (análise humana)
 Score 70-100% → ❌ BLOQUEADO   (fraude detectada)
 ```
 
-## ✅ Validações Implementadas
+✅ Validações Implementadas
 
 O sistema **bloqueia automaticamente**:
 
@@ -246,7 +246,7 @@ O sistema **bloqueia automaticamente**:
 }
 ```
 
-## 🛠️ Como Executar
+Como Executar
 
 ### Pré-requisitos
 
@@ -284,7 +284,7 @@ Configuração:
 SELECT * FROM TRANSACOES ORDER BY SCORE_RISCO DESC;
 ```
 
-## 🧪 Testes
+Testes
 
 ### Teste 1: Transação Normal (Aprovada)
 ```bash
@@ -300,7 +300,7 @@ curl -X POST http://localhost:8080/api/transacoes \
 
 ---
 
-### Teste 2: Transação Suspeita (Revisão)
+Teste 2: Transação Suspeita (Revisão)
 ```bash
 curl -X POST http://localhost:8080/api/transacoes \
   -H "Content-Type: application/json" \
@@ -314,7 +314,7 @@ curl -X POST http://localhost:8080/api/transacoes \
 
 ---
 
-### Teste 3: Fraude Detectada (Bloqueada)
+Teste 3: Fraude Detectada (Bloqueada)
 ```bash
 curl -X POST http://localhost:8080/api/transacoes \
   -H "Content-Type: application/json" \
@@ -328,7 +328,7 @@ curl -X POST http://localhost:8080/api/transacoes \
 
 ---
 
-### Teste 4: Validação (Erro)
+Teste 4: Validação (Erro)
 ```bash
 curl -X POST http://localhost:8080/api/transacoes \
   -H "Content-Type: application/json" \
@@ -340,33 +340,33 @@ curl -X POST http://localhost:8080/api/transacoes \
 ```
 **Resultado:** HTTP 400 com lista de erros
 
-## 👨‍💻 Autor
+Autor
 
 **Alexandre Giacomoni Ioppi**
-- 📚 Engenharia de Software - UNINTER
-- 🎓 Graduação: Setembro 2026
-- 🌍 Liverpool, Inglaterra
-- 📧 ioppiengineer@gmail.com
-- 💼 [LinkedIn](https://linkedin.com/in/ioppialexandre)
-- 🐙 [@aioppi](https://github.com/aioppi)
+-  Engenharia de Software - UNINTER
+-  Graduação: Setembro 2026
+-  Liverpool, Inglaterra
+-  ioppiengineer@gmail.com
+-  [LinkedIn](https://linkedin.com/in/ioppialexandre)
+-  [@aioppi](https://github.com/aioppi)
 
-## 📄 Licença
+Licença
 
 Este projeto é parte de um Trabalho de Conclusão de Curso (TCC) e está disponível para fins **educacionais**.
 
 ---
 
-## 🎯 Estatísticas do Projeto
+Estatísticas do Projeto
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/aioppi/tcc-sistema-antifraude)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/aioppi/tcc-sistema-antifraude)
 
 ---
 
-⭐ **Se este projeto te ajudou, considere dar uma estrela!**
+**Se este projeto te ajudou, considere dar uma estrela!**
 
 ---
 
-## 📞 Suporte
+Suporte
 
 Encontrou algum problema? Abra uma [issue](https://github.com/aioppi/tcc-sistema-antifraude/issues)!
