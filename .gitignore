@@ -27,3 +27,5 @@ application-*.properties
 *.db
 *.mv.db
 *.trace.db
+src/ml-service/creditcard.csv
+src/ml-service/fraud_model.pkl
